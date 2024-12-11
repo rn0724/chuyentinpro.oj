@@ -77,7 +77,9 @@ inline void woody (void) {
     FOR(i,1,n) cin >> a[i], ok[i] = a[i] % 3;
     dp[0]=0;
     FOR(i,1,n) dp[i] = (ok[i] == 0 ? 0 : dp[i-1] + a[i]);
-    cout << dp[n];
+    int res = 0;
+    FOR(i,1,n) maximize(res,dp[i]);
+    cout << res;
 }
 
 woodynguyne {
